@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UthaiThaniTourismApp.Views.DetailPage"
+             Title="รายละเอียดสถานที่">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15">
+            <Image Source="{Binding ImageSource}" Aspect="AspectFill" HeightRequest="200" />
+
+            <Label Text="{Binding Name}" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center" />
+
+            <!-- เส้น -->
+            <BoxView HeightRequest="1" BackgroundColor="Gray" Opacity="0.5" />
+
+            <Label Text="{Binding Description}" FontSize="Medium" TextColor="DarkGray" HorizontalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="Center" />
+
+            <!-- ปุ่มเปิดเเมพ -->
+            <Button Text="เปิดแผนที่" Clicked="OnOpenMapClicked" BackgroundColor="green" TextColor="White"/>
+
+            <!-- ปุ่มแชร์ -->
+            <Button Text="แชร์" Clicked="OnShareClicked" BackgroundColor="DodgerBlue" TextColor="White"/>
+
+            <!-- ปุ่มรายการโปรด -->
+            <!--<ImageButton Source="favorite_icon.png" Clicked="OnFavoriteClicked" WidthRequest="40" HeightRequest="40" HorizontalOptions="Center"/>-->
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

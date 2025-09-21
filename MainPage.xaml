@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UthaiThaniTourismApp.Views.MainPage"
+             Title="ท่องเที่ยวอุทัยธานี">
+
+    
+
+    <StackLayout Padding="20">
+        <SearchBar Grid.Row="0" Placeholder="ค้นหาสถานที่ท่องเที่ยว..." FontSize="Medium" TextColor="Black" PlaceholderColor="Gray" BackgroundColor="White" Margin="10" HeightRequest="45" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+        <!-- กล่องครอบตัวกรอง 3 ตัว -->
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10">
+            <!-- ปุ่มเเนะนำ -->
+            <Button Text="เเนะนำ" BackgroundColor="Gainsboro" TextColor="DodgerBlue" WidthRequest="100" FontAttributes="Bold" />
+
+            <!-- ปุ่มทั้งหมด -->
+            <Button Text="ทั้งหมด" BackgroundColor="GhostWhite" TextColor="Gray" WidthRequest="100"/>
+
+            <!-- ปุ่มยอดนิยม -->
+            <Button Text="ยอดนิยม" BackgroundColor="GhostWhite" TextColor="Gray" WidthRequest="100" />
+        </StackLayout>
+
+
+        <Label Text="6 สถานที่ท่องเที่ยวเเนะนำ" FontSize="Medium" HorizontalOptions="Center" />
+
+        <CollectionView x:Name="TourismCollection" SelectionMode="Single" SelectionChanged="OnItemSelected">
+            <!-- กำหนดให้แสดงแบบ Grid 2 คอลัมน์ -->
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="2" HorizontalItemSpacing="10" VerticalItemSpacing="10" />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="10" Margin="10" CornerRadius="10" HasShadow="True">
+                        <StackLayout Spacing="10">
+                            <Image Source="{Binding ImageSource}" HeightRequest="120" Aspect="AspectFill" />
+                            <Label Text="{Binding Name}" FontSize="Medium" HorizontalOptions="Center" />
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </StackLayout>
+</ContentPage>
